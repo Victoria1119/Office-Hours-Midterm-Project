@@ -1,5 +1,3 @@
-# Makefile - COSC 369 Project 1
-#
 #   make        compile, build the static library, link, run, make Word/Excel
 #   make clean  delete everything that was generated
 
@@ -13,17 +11,17 @@ PROG   = schedule
 # Default target
 all: $(PROG) run docs
 
-# Link main.o with the static library.
+# Link main.o with the static library
 # -L. = look for libraries in this folder, -lschedule = use libschedule.a
 $(PROG): main.o $(LIB)
 	$(CC) $(CFLAGS) main.o -L. -lschedule -o $(PROG)
 
-# Build the static library from the object files.
+# Build the static library
 # ar = archive tool: r = add files, c = create, s = add an index
 $(LIB): $(OBJS)
 	ar rcs $(LIB) $(OBJS)
 
-# Compile each .c file into a .o file (-c = compile only, don't link)
+# Compile each .c file into a .o file
 main.o: main.c schedule.h parser.h scheduler.h output.h
 	$(CC) $(CFLAGS) -c main.c
 
@@ -40,9 +38,9 @@ output.o: output.c output.h schedule.h
 run: $(PROG)
 	./$(PROG) faculty.txt classes.txt
 
-# Use Python to turn the output into Word and Excel files
+# Turn output into Word and Excel files
 docs: run
-	-python3 make_docs.py
+	-python3 make_schedule.py
 
 clean:
 	rm -f *.o $(LIB) $(PROG) schedule_report.txt schedule_data.txt schedule.docx schedule.xlsx
