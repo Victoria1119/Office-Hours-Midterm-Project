@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "parser.h"
 
-/* Copies a token into a field. If the token is missing (NULL), it returns 0
+/* Copies a token into a field. If the token is missing it returns 0
    so the caller can skip the bad line instead of crashing. */
 static int copy_token(char *dest, const char *token, int size)
 {
@@ -70,7 +70,7 @@ int parse_professors(const char *filename, ProfessorList *profs) {
             continue;
         }
         p.num_courses = 0;
-        /* split on comma AND space so "COSC208, COSC214" gives "COSC214", not " COSC214" */
+        
         char *course = strtok_r(token, ", ", &inner_save);
         while (course != NULL && p.num_courses < MAX_COURSES_PER_PROF) {
             strncpy(p.course_codes[p.num_courses], course, MAX_CODE - 1);
