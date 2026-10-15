@@ -1,5 +1,5 @@
 /*
- * output.c - prints the schedule tables and saves the data file
+ * output.c purpose- prints the schedule tables and saves data file
  */
 #include <stdio.h>
 #include <string.h>
@@ -35,9 +35,7 @@ void days_to_text(const char *days, char *buffer)
     }
 }
 
-/* Office hours with the same times on different days are shown on one row.
-   Each row gets a days pattern in the same style as classes.txt, e.g.
-   Tuesday 12:15-1:45 and Thursday 12:15-1:45 -> "-T-R-". */
+/* Office hours with the same times on different days are shown on one row*/
 static int group_office_hours(const Professor *p, char row_days[][6],
                               int row_start[], int row_end[])
 {
