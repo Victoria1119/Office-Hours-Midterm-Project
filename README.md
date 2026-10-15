@@ -1,7 +1,7 @@
 For this project I wrote a C program that reads two files, faculty.txt and classes.txt, and builds a schedule for each professor. It lists their classes and gives them office hours that don't overlap any of their classes. I also used Python to turn the results into Word and Excel files, and to turn the schedule into Prolog facts and rules so Prolog can answer questions.
 
 Tools Used --------------
-I built and gtested this program on Windows using WSL (ubuntu Linux). I used the following commands:
+I built and tested this program on Windows using WSL (Ubuntu Linux). I used the following commands:
 $sudo apt update
 $sudo apt install -y build-essential swi-prolog python3-pip python3-docx python3-openpyxl
 With this install, the build essentials allowed me to code the C language part of the project, SWI-Prolog allowed me to use Prolog, and Python commands made the output viewable in Word and Excel files.
