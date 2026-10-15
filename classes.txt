@@ -1,0 +1,5 @@
+COSC208|Discrete Structures|Dr.Thomas|--W--|05:00PM|07:30PM|CS300
+COSC214|Data and Algorithms|Dr.Thomas|M-W--|11:00AM|1:15PM|CS330
+ENG364|Tech Writing I|Dr.Smith|-T-R-|09:30AM|10:45AM|L100
+ENG365|Tech Writing II|Dr.Smith|-T-R-|11:00AM|12:15PM|L200
+MATH220|Calculus|Dr.Jones|M-W--|09:30AM|10:45AM|MATH100

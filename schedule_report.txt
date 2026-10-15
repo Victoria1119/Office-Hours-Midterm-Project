@@ -1,0 +1,41 @@
+============================================================================
+Dr.Thomas - Computer Science
+============================================================================
+CLASS SCHEDULE
+Course                               Times                                      Location
+COSC208 (Discrete Structures)        Wednesday 5:00 PM to 7:30 PM               CS300
+COSC214 (Data and Algorithms)        Monday & Wednesday 11:00 AM to 1:15 PM     CS330
+
+OFFICE HOURS (4 hours per week)
+Days                                 Times                                      Location
+Monday & Wednesday                   1:15 PM to 3:15 PM                         CS201
+
+NOTE: Instructors are not to be interrupted during class times.
+
+============================================================================
+Dr.Smith - English
+============================================================================
+CLASS SCHEDULE
+Course                               Times                                      Location
+ENG364 (Tech Writing I)              Tuesday & Thursday 9:30 AM to 10:45 AM     L100
+ENG365 (Tech Writing II)             Tuesday & Thursday 11:00 AM to 12:15 PM    L200
+
+OFFICE HOURS (3 hours per week)
+Days                                 Times                                      Location
+Tuesday & Thursday                   12:15 PM to 1:45 PM                        L105
+
+NOTE: Instructors are not to be interrupted during class times.
+
+============================================================================
+Dr.Jones - Math
+============================================================================
+CLASS SCHEDULE
+Course                               Times                                      Location
+MATH220 (Calculus)                   Monday & Wednesday 9:30 AM to 10:45 AM     MATH100
+
+OFFICE HOURS (2 hours per week)
+Days                                 Times                                      Location
+Monday & Wednesday                   10:45 AM to 11:45 AM                       MAT110
+
+NOTE: Instructors are not to be interrupted during class times.
+
