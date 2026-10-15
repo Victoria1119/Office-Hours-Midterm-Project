@@ -1,8 +1,5 @@
 /*
- * main.c - COSC 369 Project 1: Professor teaching and office-hours schedule
- *
- * Usage: ./schedule faculty.txt classes.txt
- *
+ * main.c purpose - Professor teaching and office-hours schedule
  * 1. Read the two input files            (parser.c)
  * 2. Assign office hours                 (scheduler.c)
  * 3. Print the report and save the files (output.c)
@@ -30,7 +27,7 @@ int main(int argc, char *argv[]) {
 
     assign_office_hours(&profs, &courses);
 
-    /* print to the screen */
+    /* print to screen */
     print_report(stdout, &profs, &courses);
 
     /* save the same report to a file */
