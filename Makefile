@@ -1,8 +1,6 @@
-# Makefile - COSC 369 Project 1
-#
-#   make        compile, build the static library, link, run, make Word/Excel,
-#               and run the Prolog questions
-#   make clean  delete everything that was generated
+# Makefile
+#   make purpose- compile, build the static library, link, run, make Word/Excel and run the Prolog questions
+#   make clean purpose- delete everything that was generated
 
 # Macros
 CC     = gcc
@@ -48,8 +46,7 @@ run: $(PROG)
 docs: run
 	-python3 make_schedule.py
 
-# Python turns the data into Prolog facts and rules (schedule.pl),
-# then Prolog answers questions about the schedule.
+# Python turns the data into Prolog facts and rules then Prolog answers questions about the schedule
 # ask_prolog.py asks the same kind of questions from Python using pyswip.
 prolog: run
 	python3 make_prolog.py
