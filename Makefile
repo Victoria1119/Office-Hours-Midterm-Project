@@ -15,17 +15,17 @@ PROG   = schedule
 # Default target
 all: $(PROG) run docs prolog
 
-# Link main.o with the static library.
+# Link main.o with the static library
 # -L. = look for libraries in this folder, -lschedule = use libschedule.a
 $(PROG): main.o $(LIB)
 	$(CC) $(CFLAGS) main.o -L. -lschedule -o $(PROG)
 
-# Build the static library from the object files.
+# Build the static library
 # ar = archive tool: r = add files, c = create, s = add an index
 $(LIB): $(OBJS)
 	ar rcs $(LIB) $(OBJS)
 
-# Compile each .c file into a .o file (-c = compile only, don't link)
+# Compile each .c file into a .o file
 main.o: main.c schedule.h parser.h scheduler.h output.h
 	$(CC) $(CFLAGS) -c main.c
 
