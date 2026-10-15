@@ -1,4 +1,7 @@
-#   make        compile, build the static library, link, run, make Word/Excel
+# Makefile - COSC 369 Project 1
+#
+#   make        compile, build the static library, link, run, make Word/Excel,
+#               and run the Prolog questions
 #   make clean  delete everything that was generated
 
 # Macros
@@ -8,20 +11,23 @@ OBJS   = parser.o scheduler.o output.o
 LIB    = libschedule.a
 PROG   = schedule
 
-# Default target
-all: $(PROG) run docs
+# These targets are actions, not files
+.PHONY: all run docs prolog clean
 
-# Link main.o with the static library
+# Default target
+all: $(PROG) run docs prolog
+
+# Link main.o with the static library.
 # -L. = look for libraries in this folder, -lschedule = use libschedule.a
 $(PROG): main.o $(LIB)
 	$(CC) $(CFLAGS) main.o -L. -lschedule -o $(PROG)
 
-# Build the static library
+# Build the static library from the object files.
 # ar = archive tool: r = add files, c = create, s = add an index
 $(LIB): $(OBJS)
 	ar rcs $(LIB) $(OBJS)
 
-# Compile each .c file into a .o file
+# Compile each .c file into a .o file (-c = compile only, don't link)
 main.o: main.c schedule.h parser.h scheduler.h output.h
 	$(CC) $(CFLAGS) -c main.c
 
@@ -38,9 +44,17 @@ output.o: output.c output.h schedule.h
 run: $(PROG)
 	./$(PROG) faculty.txt classes.txt
 
-# Turn output into Word and Excel files
+# Use Python to turn the output into Word and Excel files
 docs: run
 	-python3 make_schedule.py
 
+# Python turns the data into Prolog facts and rules (schedule.pl),
+# then Prolog answers questions about the schedule.
+# ask_prolog.py asks the same kind of questions from Python using pyswip.
+prolog: run
+	python3 make_prolog.py
+	swipl -q queries.pl
+	-python3 ask_prolog.py
+
 clean:
-	rm -f *.o $(LIB) $(PROG) schedule_report.txt schedule_data.txt schedule.docx schedule.xlsx
+	rm -f *.o $(LIB) $(PROG) schedule_report.txt schedule_data.txt schedule.docx schedule.xlsx schedule.pl
