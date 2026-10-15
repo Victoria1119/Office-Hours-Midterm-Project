@@ -16,12 +16,10 @@ PROG   = schedule
 all: $(PROG) run docs prolog
 
 # Link main.o with the static library
-# -L. = look for libraries in this folder, -lschedule = use libschedule.a
 $(PROG): main.o $(LIB)
 	$(CC) $(CFLAGS) main.o -L. -lschedule -o $(PROG)
 
 # Build the static library
-# ar = archive tool: r = add files, c = create, s = add an index
 $(LIB): $(OBJS)
 	ar rcs $(LIB) $(OBJS)
 
