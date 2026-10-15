@@ -1,14 +1,4 @@
-/*
- * scheduler.c - assigns office hours
- *
- * For each professor:
- *   1. Find the days they teach (from the days field, e.g. "M-W--").
- *   2. Split their office hours evenly across those days.
- *      Example: 4 hours on Monday and Wednesday = 2 hours each day.
- *   3. On each day, first try to start right after one of their classes.
- *      If that doesn't fit, try every start time from 9:00 AM, 15 minutes
- *      at a time. Office hours must end by 5:00 PM.
- */
+
 #include <stdio.h>
 #include <string.h>
 #include "scheduler.h"
