@@ -2,8 +2,7 @@
 # Reads schedule_data.txt (made by the C program) and creates
 # schedule.docx (Word) and schedule.xlsx (Excel).
 # The Makefile runs this after the C program.
-#
-# Needs: pip install --user python-docx openpyxl
+
 
 import sys
 
